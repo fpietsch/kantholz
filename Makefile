@@ -10,8 +10,8 @@ install:
 	systemctl daemon-reload
 
 enable:
-	echo $(SERVICE)
+	$(SERVICE)
 
 restart:
-	echo $(SERVICE)
+	$(SERVICE)
 
