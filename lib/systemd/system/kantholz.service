@@ -1,0 +1,17 @@
+[Unit]
+Description=elasticsearch_exporter
+After=network.target
+
+[Service]
+Environment=VERSION=1.0.0-rc1
+Environment=PORT=9108
+
+Type=simple
+User=root
+ExecPre=/usr/bin/docker justwatch/elasticsearch_exporter:${VERSION}
+ExecStart=/usr/bin/docker run --rm --net=host -p ${PORT}:${PORT} justwatch/elasticsearch_exporter:${VERSION}
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+
