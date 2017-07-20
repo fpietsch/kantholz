@@ -8,7 +8,7 @@ Environment=PORT=9108
 
 Type=simple
 User=root
-ExecPre=/usr/bin/docker justwatch/elasticsearch_exporter:${VERSION}
+ExecPre=/usr/bin/docker pull justwatch/elasticsearch_exporter:${VERSION}
 ExecStart=/usr/bin/docker run --rm --net=host -p ${PORT}:${PORT} justwatch/elasticsearch_exporter:${VERSION}
 Restart=on-abort
 
