@@ -3,7 +3,7 @@ Description=elasticsearch_exporter
 After=network.target
 
 [Service]
-Environment=VERSION=1.0.0-rc1
+Environment=VERSION=1.0.1
 Environment=PORT=9108
 
 Type=simple
